@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>José Mario Barrera Tavera — Perfil Académico & Profesional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Source+Code+Pro:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --negro: #050810;
+  --negro2: #0a0f1e;
+  --negro3: #0f1629;
+  --azul-deep: #0a1628;
+  --azul: #1a4a8a;
+  --azul2: #2e7ae0;
+  --azul3: #4d96f5;
+  --azul-bright: #7ab8ff;
+  --azul-neon: #00aaff;
+  --plata: #d0ddf0;
+  --plata2: #b8ccdf;
+  --plata3: #8faac4;
+  --plata4: #5a7290;
+  --plata-bright: #eef4ff;
+  --blanco: #ffffff;
+  --dorado: #d4af58;
+  --dorado2: #f0d070;
+  --verde: #34b86a;
+  --rojo: #cc3333;
+  --gris: #2a3550;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: var(--negro);
+  color: var(--plata);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ══════════════ SCROLLBAR ══════════════ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--negro2); }
+::-webkit-scrollbar-thumb { background: var(--azul2); border-radius: 3px; }
+
+/* ══════════════ BACKGROUND GRID ══════════════ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(26,74,138,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,74,138,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ══════════════ PARTICLES ══════════════ */
+#particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: floatUp linear infinite;
+  opacity: 0;
+}
+@keyframes floatUp {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(-20px) scale(1); opacity: 0; }
+}
+
+/* ══════════════ HERO HEADER ══════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(26,74,138,0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Líneas decorativas hero */
+.hero-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero-lines::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 1px; height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--azul2) 30%, var(--azul2) 70%, transparent);
+  opacity: 0.2;
+}
+
+/* Foto de perfil */
+.photo-container {
+  position: relative;
+  margin-bottom: 2.5rem;
+  display: inline-block;
+}
+.photo-ring {
+  width: 170px; height: 170px;
+  border-radius: 50%;
+  position: relative;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--azul2), var(--azul-bright), var(--plata), var(--azul2));
+  box-shadow: 0 0 40px rgba(58,130,240,0.4), 0 0 80px rgba(58,130,240,0.15);
+}
+.photo-ring::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(91,163,255,0.2);
+  animation: pulseRing 3s ease-in-out infinite;
+}
+.photo-ring::after {
+  content: '';
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  border: 1px solid rgba(91,163,255,0.1);
+  animation: pulseRing 3s ease-in-out infinite 1s;
+}
+  to { transform: rotate(360deg); }
+}
+@keyframes pulseRing {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
+}
+.photo-inner {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: var(--azul-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 3px solid var(--negro);
+}
+.photo-placeholder {
+  font-size: 4rem;
+  opacity: 0.5;
+  user-select: none;
+}
+.photo-upload-btn {
+  position: absolute;
+  bottom: 8px; right: 8px;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--azul2);
+  border: 2px solid var(--negro);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+  z-index: 10;
+  box-shadow: 0 2px 12px rgba(34,102,204,0.6);
+}
+.photo-upload-btn:hover {
+  background: var(--azul-bright);
+  transform: scale(1.1);
+}
+#photoInput { display: none; }
+#profileImg {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Nombre */
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  color: var(--blanco);
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 60px rgba(91,163,255,0.3);
+}
+.hero-name span {
+  background: linear-gradient(135deg, var(--azul-bright) 0%, var(--plata-bright) 50%, var(--azul3) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.15rem);
+  font-weight: 500;
+  color: var(--azul-bright);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+{PLACEHOLDER}
+  font-size: 0.9rem;
+  color: var(--plata2);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+/* Separador ornamental */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  justify-content: center;
+}
+.ornament-line {
+  height: 1px;
+  width: 80px;
+  background: linear-gradient(to right, transparent, var(--azul2));
+}
+.ornament-line.right {
+  background: linear-gradient(to left, transparent, var(--azul2));
+}
+.ornament-diamond {
+  width: 8px; height: 8px;
+  background: var(--azul-bright);
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px var(--azul-bright);
+}
+
+/* Stats */
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+}
+.stat-item {
+  text-align: center;
+  position: relative;
+}
+.stat-item::after {
+  content: '';
+  position: absolute;
+  right: -1.25rem; top: 50%;
+  transform: translateY(-50%);
+  height: 40px; width: 1px;
+  background: var(--plata4);
+}
+.stat-item:last-child::after { display: none; }
+.stat-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--azul-bright);
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(91,163,255,0.5);
+}
+.stat-l {
+  font-size: 0.72rem;
+  color: var(--plata2);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 0.2rem;
+}
+
+/* CTA Scroll */
+.scroll-cta {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--plata4);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: bounce 2s ease-in-out infinite;
+}
+.scroll-arrow {
+  width: 20px; height: 20px;
+  border-right: 2px solid var(--azul2);
+  border-bottom: 2px solid var(--azul2);
+  transform: rotate(45deg);
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ══════════════ NAV ══════════════ */
+.nav-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5,8,16,0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(34,102,204,0.2);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+nav::-webkit-scrollbar { display: none; }
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  color: var(--azul-bright);
+  white-space: nowrap;
+  padding: 1rem 1.5rem 1rem 0;
+  border-right: 1px solid var(--plata4);
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+nav a {
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  color: var(--plata2);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: all 0.2s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; right: 50%;
+  height: 2px;
+  background: var(--azul-bright);
+  transition: all 0.3s;
+  box-shadow: 0 0 8px var(--azul-bright);
+}
+nav a:hover {
+  color: var(--plata-bright);
+}
+nav a:hover::after,
+nav a.active::after {
+  left: 0; right: 0;
+}
+nav a.active { color: var(--azul-bright); }
+
+/* ══════════════ MAIN LAYOUT ══════════════ */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ══════════════ SECTION ══════════════ */
+.section {
+  margin-bottom: 6rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  scroll-margin-top: 70px;
+}
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Anchor offset for hero too */
+#inicio { scroll-margin-top: 0; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.section-number {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.75rem;
+  color: var(--azul2);
+  letter-spacing: 2px;
+}
+.section-icon {
+  font-size: 1.3rem;
+  filter: drop-shadow(0 0 8px rgba(91,163,255,0.5));
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--blanco);
+  font-weight: 700;
+  flex: 1;
+}
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--azul2), transparent);
+  max-width: 200px;
+}
+
+/* ══════════════ GRADO CARDS ══════════════ */
+.grado-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.grado-card {
+  background: linear-gradient(135deg, var(--negro2) 0%, var(--azul-deep) 100%);
+  border: 1px solid rgba(34,102,204,0.25);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  group: true;
+}
+.grado-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--azul2), var(--azul-bright), var(--plata));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.grado-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 0% 0%, rgba(34,102,204,0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.grado-card:hover {
+  border-color: var(--azul3);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(26,74,138,0.4), 0 0 30px rgba(91,163,255,0.1);
+}
+.grado-card:hover::before, .grado-card:hover::after { opacity: 1; }
+.grado-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(34,102,204,0.15);
+  border: 1px solid rgba(34,102,204,0.4);
+  color: var(--azul-bright);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.grado-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--blanco);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+.grado-card .inst {
+  font-size: 0.85rem;
+  color: var(--plata2);
+  margin-bottom: 1rem;
+}
+.grado-card .year-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--dorado2);
+  font-weight: 600;
+}
+.grado-card .bg-icon {
+  position: absolute;
+  bottom: -10px; right: -10px;
+  font-size: 6rem;
+  opacity: 0.05;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.grado-card:hover .bg-icon { opacity: 0.1; transform: scale(1.1) rotate(-5deg); }
+
+/* Titulado badge */
+.status-titulado {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: rgba(42,157,92,0.15); border: 1px solid rgba(42,157,92,0.4);
+  color: var(--verde); font-size: 0.7rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 10px; margin-left: 0.5rem;
+  letter-spacing: 0.5px;
+}
+.status-pasante {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: rgba(200,168,75,0.15); border: 1px solid rgba(200,168,75,0.4);
+  color: var(--dorado2); font-size: 0.7rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 10px; margin-left: 0.5rem;
+}
+
+/* ══════════════ DIPLOMADOS ══════════════ */
+.diplo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+.diplo-card {
+  background: var(--negro2);
+  border: 1px solid var(--plata4);
+  border-left: 4px solid var(--dorado);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+  cursor: default;
+}
+.diplo-card:hover {
+  border-color: var(--dorado2);
+  border-left-color: var(--dorado2);
+  box-shadow: 0 8px 30px rgba(200,168,75,0.15), -4px 0 20px rgba(200,168,75,0.1);
+  transform: translateX(4px);
+}
+.diplo-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.7rem;
+  filter: drop-shadow(0 0 6px rgba(200,168,75,0.3));
+}
+.diplo-card h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.05rem;
+  color: var(--blanco);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+.diplo-card .inst { font-size: 0.82rem; color: var(--plata2); margin-bottom: 0.7rem; }
+.diplo-meta {
+  display: flex; gap: 0.8rem; flex-wrap: wrap;
+}
+.diplo-tag {
+  font-size: 0.75rem; color: var(--dorado);
+  background: rgba(200,168,75,0.1);
+  border: 1px solid rgba(200,168,75,0.25);
+  padding: 2px 8px; border-radius: 10px;
+}
+
+/* ══════════════ TABLA DARK ══════════════ */
+.table-section-wrap {
+  background: var(--negro2);
+  border: 1px solid var(--plata4);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.table-wrap { overflow-x: auto; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+thead tr {
+  background: linear-gradient(90deg, var(--azul-deep) 0%, rgba(26,74,138,0.5) 100%);
+  border-bottom: 2px solid var(--azul2);
+}
+thead th {
+  padding: 1rem 0.9rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--azul-bright);
+}
+tbody tr {
+  border-bottom: 1px solid rgba(58,77,102,0.3);
+  transition: all 0.2s;
+}
+tbody tr:hover {
+  background: rgba(26,74,138,0.15);
+}
+tbody td {
+  padding: 0.8rem 0.9rem;
+  color: var(--plata2);
+  vertical-align: middle;
+}
+.td-num {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.75rem;
+  color: var(--plata4);
+  width: 40px;
+}
+.horas-badge {
+  display: inline-block;
+  background: rgba(46,122,224,0.2);
+  border: 1px solid rgba(77,150,245,0.5);
+  color: var(--azul-bright);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.td-programa { color: var(--plata-bright); font-weight: 500; }
+.td-habilidades { color: var(--plata2); font-size: 0.8rem; }
+
+/* Tipo badges */
+.tipo-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.t-curso { background: rgba(58,130,240,0.15); color: var(--azul3); border: 1px solid rgba(58,130,240,0.3); }
+.t-taller { background: rgba(91,163,255,0.12); color: #7ab8ff; border: 1px solid rgba(91,163,255,0.3); }
+.t-jornada { background: rgba(150,100,200,0.15); color: #c090e0; border: 1px solid rgba(150,100,200,0.3); }
+.t-seminario { background: rgba(0,170,255,0.12); color: var(--azul-neon); border: 1px solid rgba(0,170,255,0.3); }
+.t-cert { background: rgba(42,157,92,0.15); color: #5acf8a; border: 1px solid rgba(42,157,92,0.3); }
+.t-micro { background: rgba(200,168,75,0.12); color: var(--dorado2); border: 1px solid rgba(200,168,75,0.3); }
+.t-reconoc { background: rgba(200,200,200,0.1); color: var(--plata2); border: 1px solid rgba(200,200,200,0.2); }
+.t-constancia { background: rgba(80,180,120,0.1); color: #80d0a0; border: 1px solid rgba(80,180,120,0.25); }
+
+/* ══════════════ FILTER BAR ══════════════ */
+.filter-bar {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--plata4);
+  background: rgba(10,15,30,0.5);
+}
+.filter-btn {
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--plata4);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--plata2);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.filter-btn:hover {
+  border-color: var(--azul3);
+  color: var(--azul-bright);
+  background: rgba(34,102,204,0.1);
+}
+.filter-btn.active {
+  background: var(--azul2);
+  border-color: var(--azul2);
+  color: white;
+  box-shadow: 0 0 16px rgba(34,102,204,0.4);
+}
+
+/* ══════════════ HABILIDADES ══════════════ */
+.skills-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.skill-category {
+  background: var(--negro2);
+  border: 1px solid var(--plata4);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.skill-cat-header {
+  padding: 1rem 1.2rem;
+  background: linear-gradient(90deg, rgba(26,74,138,0.4), transparent);
+  border-bottom: 1px solid var(--plata4);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--azul-bright);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.skill-cat-icon { font-size: 1.1rem; }
+.skills-list {
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.88rem;
+  color: var(--plata2);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(58,77,102,0.2);
+  transition: color 0.2s;
+}
+.skill-item:last-child { border-bottom: none; }
+.skill-item:hover { color: var(--plata-bright); }
+.skill-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--azul2);
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(34,102,204,0.6);
+}
+
+/* ══════════════ AREAS DE PRACTICA ══════════════ */
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+.area-card {
+  position: relative;
+  background: var(--negro2);
+  border: 1px solid var(--plata4);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.area-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(34,102,204,0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.area-card:hover {
+  border-color: var(--azul3);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(26,74,138,0.5), 0 0 40px rgba(91,163,255,0.1);
+}
+.area-card:hover::before { opacity: 1; }
+.area-icon {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  display: block;
+  filter: drop-shadow(0 0 12px rgba(91,163,255,0.4));
+  transition: transform 0.3s;
+}
+.area-card:hover .area-icon { transform: scale(1.15) rotate(-5deg); }
+.area-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--blanco);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.area-card p { font-size: 0.82rem; color: var(--plata2); line-height: 1.5; }
+.area-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--azul2), var(--azul-bright));
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+.area-card:hover .area-bar { transform: scaleX(1); }
+
+/* ══════════════ TIMELINE (línea profesional) ══════════════ */
+.timeline {
+  position: relative;
+  padding-left: 2.5rem;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--azul2), var(--azul-bright), var(--azul2));
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+}
+.timeline-dot {
+  position: absolute;
+  left: -2.5rem - 4px;
+  left: calc(-2.5rem - 5px);
+  top: 0.2rem;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--azul-bright);
+  border: 2px solid var(--negro);
+  box-shadow: 0 0 12px rgba(91,163,255,0.6);
+}
+.timeline-year {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.78rem;
+  color: var(--azul-bright);
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+.timeline-content {
+  background: var(--negro2);
+  border: 1px solid var(--plata4);
+  border-radius: 10px;
+  padding: 1rem 1.3rem;
+}
+.timeline-content h4 {
+  color: var(--plata-bright);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.timeline-content p { color: var(--plata2); font-size: 0.85rem; }
+
+/* ══════════════ CONTACT BAR ══════════════ */
+.contact-section {
+  background: linear-gradient(135deg, var(--negro2) 0%, var(--azul-deep) 100%);
+  border: 1px solid rgba(34,102,204,0.3);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(34,102,204,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+.contact-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--blanco);
+  margin-bottom: 1.5rem;
+}
+.contact-items {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-item, a.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: rgba(46,122,224,0.12);
+  border: 1px solid rgba(46,122,224,0.35);
+  border-radius: 10px;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+  color: var(--plata-bright);
+  transition: all 0.3s;
+}
+.contact-item:hover, a.contact-item:hover {
+  background: rgba(46,122,224,0.25);
+  border-color: var(--azul3);
+  transform: translateY(-2px);
+  color: var(--blanco);
+}
+.contact-icon { font-size: 1.2rem; }
+
+/* ══════════════ FOOTER ══════════════ */
+footer {
+  background: var(--negro2);
+  border-top: 1px solid var(--plata4);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: var(--plata4);
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+}
+footer .footer-name {
+  font-family: 'Playfair Display', serif;
+  color: var(--azul-bright);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.footer-ornament {
+  display: flex; align-items: center; gap: 1rem;
+  justify-content: center; margin: 0.8rem 0;
+}
+.fo-line { width: 60px; height: 1px; background: var(--plata4); }
+.fo-dot { width: 5px; height: 5px; background: var(--azul2); transform: rotate(45deg); }
+
+/* ══════════════ HERO BUTTONS ══════════════ */
+.hero-btn-azul, .hero-btn-gold, .hero-btn-green, .hero-btn-silver {
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.hero-btn-azul {
+  background: rgba(34,102,204,0.2);
+  border: 1px solid var(--azul2);
+  color: var(--azul-bright);
+}
+.hero-btn-azul:hover { background: rgba(34,102,204,0.5); }
+.hero-btn-gold {
+  background: rgba(200,168,75,0.1);
+  border: 1px solid var(--dorado);
+  color: var(--dorado2);
+}
+.hero-btn-gold:hover { background: rgba(200,168,75,0.3); }
+.hero-btn-green {
+  background: rgba(42,157,92,0.1);
+  border: 1px solid var(--verde);
+  color: #5acf8a;
+}
+.hero-btn-green:hover { background: rgba(42,157,92,0.3); }
+.hero-btn-silver {
+  background: rgba(91,163,255,0.08);
+  border: 1px solid var(--plata4);
+  color: var(--plata-bright);
+}
+.hero-btn-silver:hover { background: rgba(91,163,255,0.2); }
+
+/* ══════════════ BACK TO TOP ══════════════ */
+#backTop {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  width: 46px; height: 46px;
+  background: var(--azul2);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  box-shadow: 0 4px 20px rgba(34,102,204,0.5);
+  transition: all 0.3s;
+}
+#backTop:hover {
+  background: var(--azul3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(34,102,204,0.6);
+}
+#backTop.show { display: flex; }
+
+/* ══════════════ LOADING OVERLAY ══════════════ */
+#loader {
+  position: fixed; inset: 0;
+  background: var(--negro);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transition: opacity 0.5s ease;
+}
+#loader.fade { opacity: 0; pointer-events: none; }
+.loader-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--azul-bright);
+  letter-spacing: 3px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+.loader-bar {
+  width: 200px; height: 2px;
+  background: var(--plata4);
+  border-radius: 1px;
+  overflow: hidden;
+}
+.loader-progress {
+  height: 100%;
+  background: linear-gradient(to right, var(--azul2), var(--azul-bright));
+  border-radius: 1px;
+  width: 0%;
+  transition: width 0.8s ease;
+  box-shadow: 0 0 10px var(--azul-bright);
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ══════════════ TOOLTIP ══════════════ */
+.tooltip-wrap { position: relative; }
+.tooltip {
+  position: absolute;
+  bottom: 110%; left: 50%;
+  transform: translateX(-50%);
+  background: var(--azul-deep);
+  border: 1px solid var(--azul2);
+  color: var(--plata-bright);
+  font-size: 0.78rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+.tooltip-wrap:hover .tooltip { opacity: 1; }
+
+/* ══════════════ RESPONSIVE ══════════════ */
+@media(max-width: 700px) {
+  .hero-stats { gap: 1.5rem; }
+  .stat-item::after { display: none; }
+  .grado-grid, .diplo-grid, .areas-grid { grid-template-columns: 1fr; }
+  .contact-section { padding: 2rem 1rem; }
+  .filter-bar { padding: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-name">J. M. Barrera Tavera</div>
+  <div class="loader-bar"><div class="loader-progress" id="loaderProg"></div></div>
+  <div style="font-size:0.75rem;color:var(--plata4);letter-spacing:2px;">CARGANDO PERFIL…</div>
+</div>
+
+<!-- PARTÍCULAS -->
+<div id="particles"></div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="inicio">
+  <div class="hero-lines"></div>
+
+  <!-- Foto -->
+  <div class="photo-container">
+    <div class="photo-ring">
+      <div class="photo-inner">
+        <img id="profileImg" src="" alt="" style="display:none;">
+        <div class="photo-placeholder" id="photoPlaceholder">⚖️</div>
+      </div>
+    </div>
+    <button class="photo-upload-btn tooltip-wrap" onclick="document.getElementById('photoInput').click()" title="Subir foto">
+      📷
+      <span class="tooltip">Agregar foto</span>
+    </button>
+    <input type="file" id="photoInput" accept="image/*" onchange="loadPhoto(this)">
+  </div>
+
+  <div style="font-family:'Source Code Pro',monospace;font-size:0.72rem;color:var(--azul2);letter-spacing:3px;margin-bottom:0.7rem;">
+    PERFIL ACADÉMICO & PROFESIONAL · 2022–2026
+  </div>
+
+  <h1 class="hero-name">
+    <span>José Mario</span><br>Barrera Tavera
+  </h1>
+
+  <p class="hero-title">Lic. en Derecho &nbsp;·&nbsp; Lic. en Contaduría Pública &nbsp;·&nbsp; Pasante de Maestría en Juicios Orales</p>
+  <p class="hero-sub">Derecho Fiscal · Litigación Oral · Amparo · Derechos Humanos · Contaduría</p>
+
+  <div style="display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem;font-size:0.82rem;color:var(--plata2);">
+    <span>&#128140; josemario.btavera@gmail.com</span>
+    <span style="color:var(--plata3);">|</span>
+    <span>&#128242; 333 023 8213</span>
+    <span style="color:var(--plata3);">|</span>
+    <span>&#128205; Zacatecas, Zac.</span>
+  </div>
+
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-line right"></div>
+  </div>
+
+  <!-- Stats -->
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-n" data-target="3">0</div>
+      <div class="stat-l">Títulos de Grado</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n" data-target="5">0</div>
+      <div class="stat-l">Diplomados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n" data-target="46" data-suffix="+">0</div>
+      <div class="stat-l">Programas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n" data-target="252" data-suffix="+">0</div>
+      <div class="stat-l">Horas Documentadas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n" style="font-size:1.5rem;">2022–26</div>
+      <div class="stat-l">Período Formación</div>
+    </div>
+  </div>
+
+  <!-- Botones nav rápido -->
+  <div style="display:flex;gap:0.8rem;flex-wrap:wrap;justify-content:center;">
+    <button onclick="navTo('grado')" class="hero-btn-azul">&#127891; Formación</button>
+    <button onclick="navTo('diplomados')" class="hero-btn-gold">&#128220; Diplomados</button>
+    <button onclick="navTo('judicial')" class="hero-btn-azul">&#9878;&#65039; Esc. Judicial</button>
+    <button onclick="navTo('habilidades')" class="hero-btn-green">&#128161; Habilidades</button>
+    <button onclick="navTo('areas')" class="hero-btn-silver">&#9962; Areas</button>
+  </div>
+
+  <div class="scroll-cta">
+    <div class="scroll-arrow"></div>
+    <span>Explorar</span>
+  </div>
+</section>
+
+<!-- ══════════════ NAV ══════════════ -->
+<div class="nav-wrapper" id="navWrapper">
+  <nav>
+    <div class="nav-logo">JMB · T</div>
+    <a href="javascript:void(0)" onclick="navTo('inicio')" id="nav-inicio">&#127968; Inicio</a>
+    <a href="javascript:void(0)" onclick="navTo('grado')" id="nav-grado">&#127891; Grado</a>
+    <a href="javascript:void(0)" onclick="navTo('diplomados')" id="nav-diplomados">&#128220; Diplomados</a>
+    <a href="javascript:void(0)" onclick="navTo('judicial')" id="nav-judicial">&#9878;&#65039; Esc. Judicial</a>
+    <a href="javascript:void(0)" onclick="navTo('otros')" id="nav-otros">&#128218; Otros Cursos</a>
+    <a href="javascript:void(0)" onclick="navTo('habilidades')" id="nav-habilidades">&#128161; Habilidades</a>
+    <a href="javascript:void(0)" onclick="navTo('areas')" id="nav-areas">&#9962; Areas</a>
+    <a href="javascript:void(0)" onclick="navTo('contacto')" id="nav-contacto">&#128140; Contacto</a>
+  </nav>
+</div>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<main>
+
+  <!-- ─── GRADO ─── -->
+  <div class="section" id="grado">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <span class="section-icon">🎓</span>
+      <h2 class="section-title">Formación Académica de Grado y Posgrado</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="grado-grid">
+      <div class="grado-card">
+        <div class="grado-card-badge">⚖️ Licenciatura</div>
+        <span class="status-titulado">✓ Titulado</span>
+        <h3>Licenciatura en Derecho</h3>
+        <p class="inst">Centro Carbonell — SEP · RVOE 20190144</p>
+        <p class="year-badge">📅 Enero 2026 &nbsp;·&nbsp; Ciudad de México &nbsp;·&nbsp; Promedio 10</p>
+        <div class="bg-icon">⚖️</div>
+      </div>
+      <div class="grado-card">
+        <div class="grado-card-badge">🏛️ Maestría</div>
+        <span class="status-pasante">⏳ Pasante</span>
+        <h3>Maestría en Juicios Orales</h3>
+        <p class="inst">CUT/LAG — SEP · RVOE 20171492</p>
+        <p class="year-badge">📅 Carta de Pasante: Nov 2025 &nbsp;·&nbsp; En progreso</p>
+        <div class="bg-icon">🏛️</div>
+      </div>
+      <div class="grado-card">
+        <div class="grado-card-badge">📊 Licenciatura</div>
+        <span class="status-titulado">✓ Titulado</span>
+        <h3>Licenciatura en Contaduría Pública</h3>
+        <p class="inst">Institución con RVOE oficial — SEP</p>
+        <p class="year-badge">📅 Titulado 2025</p>
+        <div class="bg-icon">📊</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── DIPLOMADOS ─── -->
+  <div class="section" id="diplomados">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <span class="section-icon">📜</span>
+      <h2 class="section-title">Diplomados Especializados</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="diplo-grid">
+      <div class="diplo-card">
+        <div class="diplo-icon">📋</div>
+        <h3>Especialista en Derecho Fiscal</h3>
+        <p class="inst">Institución especializada</p>
+        <div class="diplo-meta">
+          <span class="diplo-tag">📅 2025</span>
+          <span class="diplo-tag">⏱ ~6 meses</span>
+          <span class="diplo-tag">🔑 Fiscal</span>
+        </div>
+      </div>
+      <div class="diplo-card">
+        <div class="diplo-icon">&#128220;</div>
+        <h3>Litigio Estratégico en Materia Civil y Mercantil</h3>
+        <p class="inst">COMPRENDER — Dr. Miguel Antonio Gutiérrez Güereca</p>
+        <div class="diplo-meta">
+          <span class="diplo-tag">📅 Ene–Mar 2025</span>
+          <span class="diplo-tag">⏱ 32h</span>
+          <span class="diplo-tag">🔑 Civil / Mercantil</span>
+        </div>
+      </div>
+      <div class="diplo-card">
+        <div class="diplo-icon">🎤</div>
+        <h3>Litigación Oral</h3>
+        <p class="inst">Centro de Estudios Jurídicos Carbonell A.C. — Dr. Miguel Carbonell</p>
+        <div class="diplo-meta">
+          <span class="diplo-tag">📅 Ago–Nov 2023</span>
+          <span class="diplo-tag">⏱ 30h</span>
+          <span class="diplo-tag">🔑 Oral Penal</span>
+        </div>
+      </div>
+      <div class="diplo-card">
+        <div class="diplo-icon">🏦</div>
+        <h3>Derecho Fiscal y Corporativo</h3>
+        <p class="inst">Institución especializada</p>
+        <div class="diplo-meta">
+          <span class="diplo-tag">📅 Dic 2023</span>
+          <span class="diplo-tag">⏱ ~4 meses</span>
+          <span class="diplo-tag">🔑 Corporativo</span>
+        </div>
+      </div>
+      <div class="diplo-card">
+        <div class="diplo-icon">🕊️</div>
+        <h3>Derechos Humanos: Aproximaciones para su Defensa</h3>
+        <p class="inst">Institución jurídica</p>
+        <div class="diplo-meta">
+          <span class="diplo-tag">📅 2023</span>
+          <span class="diplo-tag">⏱ ~3 meses</span>
+          <span class="diplo-tag">🔑 DDHH</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── ESCUELA JUDICIAL ─── -->
+  <div class="section" id="judicial">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <span class="section-icon">⚖️</span>
+      <h2 class="section-title">Escuela Federal / Nacional de Formación Judicial</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="table-section-wrap">
+      <div style="padding:1rem 1.5rem;border-bottom:1px solid var(--plata4);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
+        <span style="font-size:0.8rem;color:var(--plata3);">10 programas acreditados &nbsp;·&nbsp; <strong style="color:var(--azul-bright);">145 horas</strong> documentadas</span>
+        <span style="font-family:'Source Code Pro',monospace;font-size:0.75rem;color:var(--plata4);">CJF · SCJN</span>
+      </div>
+      <div class="table-wrap">
+        <table id="tabla-judicial">
+          <thead><tr>
+            <th>#</th>
+            <th>Programa</th>
+            <th>Fecha</th>
+            <th>Horas</th>
+            <th>Habilidades</th>
+          </tr></thead>
+          <tbody>
+            <tr><td class="td-num">01</td><td class="td-programa">E-Justicia dirigida a la Ciudadanía (PJF)</td><td style="color:var(--plata2);white-space:nowrap;">Oct–Nov 2023</td><td><span class="horas-badge">10h</span></td><td class="td-habilidades">Plataformas digitales del PJF, tramitación electrónica</td></tr>
+            <tr><td class="td-num">02</td><td class="td-programa">Ciclo de Conferencias: Carrera Judicial y Retos para Juristas</td><td style="color:var(--plata2);white-space:nowrap;">Oct–Nov 2023</td><td><span class="horas-badge">28h</span></td><td class="td-habilidades">Conocimiento del Poder Judicial, desarrollo profesional</td></tr>
+            <tr><td class="td-num">03</td><td class="td-programa">Jornadas: Código Nacional de Procedimientos Civiles y Familiares</td><td style="color:var(--plata2);white-space:nowrap;">Oct 2023</td><td><span class="horas-badge">18h</span></td><td class="td-habilidades">CNCPF, oralidad civil, nuevo sistema procesal</td></tr>
+            <tr><td class="td-num">04</td><td class="td-programa">Guías de Valoración Judicial de la Prueba Pericial</td><td style="color:var(--plata2);white-space:nowrap;">Nov–Dic 2023</td><td><span class="horas-badge">8h</span></td><td class="td-habilidades">Valoración de prueba pericial, estándares probatorios</td></tr>
+            <tr><td class="td-num">05</td><td class="td-programa">Aspectos Relevantes de la Reforma Fiscal 2024</td><td style="color:var(--plata2);white-space:nowrap;">Ene 2024</td><td><span class="horas-badge">2h</span></td><td class="td-habilidades">Reforma fiscal 2024, cambios tributarios</td></tr>
+            <tr><td class="td-num">06</td><td class="td-programa">Derecho Laboral Procesal y Derecho Internacional del Trabajo</td><td style="color:var(--plata2);white-space:nowrap;">May 2024</td><td><span class="horas-badge">17h</span></td><td class="td-habilidades">Procedimiento laboral, normas OIT, reforma laboral</td></tr>
+            <tr><td class="td-num">07</td><td class="td-programa">Seminario de Amparo en Materia Laboral</td><td style="color:var(--plata2);white-space:nowrap;">Abr–Jul 2024</td><td><span class="horas-badge">30h</span></td><td class="td-habilidades">Amparo laboral, suspensión, conceptos de violación</td></tr>
+            <tr><td class="td-num">08</td><td class="td-programa">Conversatorios: Prisión Preventiva Oficiosa</td><td style="color:var(--plata2);white-space:nowrap;">Dic 2024</td><td><span class="horas-badge">9h</span></td><td class="td-habilidades">Prisión preventiva, presunción de inocencia, SCJN</td></tr>
+            <tr><td class="td-num">09</td><td class="td-programa">Actualización: Prisión Preventiva Oficiosa</td><td style="color:var(--plata2);white-space:nowrap;">Abr 2025</td><td><span class="horas-badge">14h</span></td><td class="td-habilidades">Reforma constitucional, control convencional, inaplicación</td></tr>
+            <tr><td class="td-num">10</td><td class="td-programa">Taller: Juicio de Amparo y Ejecución Penal (análisis de casos)</td><td style="color:var(--plata2);white-space:nowrap;">May–Jun 2025</td><td><span class="horas-badge">9h</span></td><td class="td-habilidades">Amparo penal, ejecución de sentencias, casos prácticos</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── OTROS CURSOS ─── -->
+  <div class="section" id="otros">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <span class="section-icon">📚</span>
+      <h2 class="section-title">Cursos, Talleres y Constancias — Otras Instituciones</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="table-section-wrap">
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterOtros('all',this)">Todos</button>
+        <button class="filter-btn" onclick="filterOtros('Taller',this)">Talleres</button>
+        <button class="filter-btn" onclick="filterOtros('Curso',this)">Cursos</button>
+        <button class="filter-btn" onclick="filterOtros('Jornada',this)">Jornadas</button>
+        <button class="filter-btn" onclick="filterOtros('Microcredencial',this)">Microcredenciales</button>
+        <button class="filter-btn" onclick="filterOtros('Certificado',this)">Certificados</button>
+        <button class="filter-btn" onclick="filterOtros('Constancia',this)">Constancias</button>
+      </div>
+      <div class="table-wrap">
+        <table id="tabla-otros">
+          <thead><tr>
+            <th>#</th><th>Tipo</th><th>Programa</th><th>Institución</th><th>Fecha</th><th>Horas</th>
+          </tr></thead>
+          <tbody>
+            <tr data-tipo="Taller"><td class="td-num">01</td><td><span class="tipo-badge t-taller">Taller</span></td><td class="td-programa">Audiencia Inicial — Litigación Oral Penal</td><td style="color:var(--plata2);font-size:0.82rem;">INACIPE</td><td style="color:var(--plata2);white-space:nowrap;">Feb–Mar 2026</td><td><span class="horas-badge">21h</span></td></tr>
+            <tr data-tipo="Curso"><td class="td-num">02</td><td><span class="tipo-badge t-curso">Curso</span></td><td class="td-programa">Actualización de Amparo en Materia Penal (Intensivo)</td><td style="color:var(--plata2);font-size:0.82rem;">Inst. Jurídico Atenea, S.C.</td><td style="color:var(--plata2);white-space:nowrap;">May 2025</td><td><span class="horas-badge">8h</span></td></tr>
+            <tr data-tipo="Curso"><td class="td-num">03</td><td><span class="tipo-badge t-curso">Curso</span></td><td class="td-programa">Técnicas de Argumentación Jurídica y Oratoria en Juicio Oral Penal</td><td style="color:var(--plata2);font-size:0.82rem;">Justicia, Tributo y Equidad (STPS)</td><td style="color:var(--plata2);white-space:nowrap;">Ene 2025</td><td><span class="horas-badge">3h</span></td></tr>
+            <tr data-tipo="Curso"><td class="td-num">04</td><td><span class="tipo-badge t-curso">Curso</span></td><td class="td-programa">Argumentación Jurídica</td><td style="color:var(--plata2);font-size:0.82rem;">HKC Capacitación Integral</td><td style="color:var(--plata2);white-space:nowrap;">Dic 2024</td><td><span class="horas-badge">4h</span></td></tr>
+            <tr data-tipo="Curso"><td class="td-num">05</td><td><span class="tipo-badge t-curso">Curso</span></td><td class="td-programa">Actualización en Derecho Civil y Penal</td><td style="color:var(--plata2);font-size:0.82rem;">California College México-Americano</td><td style="color:var(--plata2);white-space:nowrap;">2024</td><td><span class="horas-badge">16h</span></td></tr>
+            <tr data-tipo="Curso"><td class="td-num">06</td><td><span class="tipo-badge t-curso">Curso</span></td><td class="td-programa">Actualización Laboral 2024 — Casos Prácticos</td><td style="color:var(--plata2);font-size:0.82rem;">COMPRENDER</td><td style="color:var(--plata2);white-space:nowrap;">2024</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Certificado"><td class="td-num">07</td><td><span class="tipo-badge t-cert">Certificado</span></td><td class="td-programa">Teoría del Delito</td><td style="color:var(--plata2);font-size:0.82rem;">Institución penal</td><td style="color:var(--plata2);white-space:nowrap;">2024</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Curso"><td class="td-num">08</td><td><span class="tipo-badge t-curso">Curso</span></td><td class="td-programa">Conceptos de Violación y Agravios en el Amparo</td><td style="color:var(--plata2);font-size:0.82rem;">Institución jurídica</td><td style="color:var(--plata2);white-space:nowrap;">2025</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Taller"><td class="td-num">09</td><td><span class="tipo-badge t-taller">Taller</span></td><td class="td-programa">Taller Práctico de Juicio Oral</td><td style="color:var(--plata2);font-size:0.82rem;">Inst. de litigación oral</td><td style="color:var(--plata2);white-space:nowrap;">2023</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Curso"><td class="td-num">10</td><td><span class="tipo-badge t-curso">Curso</span></td><td class="td-programa">Curso Intensivo de Juicio Oral</td><td style="color:var(--plata2);font-size:0.82rem;">Inst. de litigación oral</td><td style="color:var(--plata2);white-space:nowrap;">2023</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Taller"><td class="td-num">11</td><td><span class="tipo-badge t-taller">Taller</span></td><td class="td-programa">Interrogatorio y Contrainterrogatorio en Delitos Sexuales</td><td style="color:var(--plata2);font-size:0.82rem;">Institución especializada</td><td style="color:var(--plata2);white-space:nowrap;">2023</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Jornada"><td class="td-num">12</td><td><span class="tipo-badge t-jornada">Jornada</span></td><td class="td-programa">Jornadas de Jurisprudencia en Materia Penal</td><td style="color:var(--plata2);font-size:0.82rem;">SCJN</td><td style="color:var(--plata2);white-space:nowrap;">2023</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Jornada"><td class="td-num">13</td><td><span class="tipo-badge t-jornada">Jornada</span></td><td class="td-programa">Sistema de Precedentes del Poder Judicial de la Federación</td><td style="color:var(--plata2);font-size:0.82rem;">SCJN</td><td style="color:var(--plata2);white-space:nowrap;">2023</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Jornada"><td class="td-num">14</td><td><span class="tipo-badge t-jornada">Jornada</span></td><td class="td-programa">Actualización: Precedente y Semanario Judicial de la Federación</td><td style="color:var(--plata2);font-size:0.82rem;">Institución jurídica</td><td style="color:var(--plata2);white-space:nowrap;">Ago 2023</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Constancia"><td class="td-num">15</td><td><span class="tipo-badge t-constancia">Constancia</span></td><td class="td-programa">Jurisprudencia y Semanario Judicial (DyC)</td><td style="color:var(--plata2);font-size:0.82rem;">SCJN</td><td style="color:var(--plata2);white-space:nowrap;">Oct 2022</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Constancia"><td class="td-num">16</td><td><span class="tipo-badge t-constancia">Constancia</span></td><td class="td-programa">14° Encuentro Universitario de Derecho</td><td style="color:var(--plata2);font-size:0.82rem;">Universidad</td><td style="color:var(--plata2);white-space:nowrap;">Oct 2022</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Curso"><td class="td-num">17</td><td><span class="tipo-badge t-curso">Curso</span></td><td class="td-programa">Reforma Laboral</td><td style="color:var(--plata2);font-size:0.82rem;">Institución laboral</td><td style="color:var(--plata2);white-space:nowrap;">Oct 2022</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Constancia"><td class="td-num">18</td><td><span class="tipo-badge t-constancia">Constancia</span></td><td class="td-programa">Inaplicación de PPO/PPJ</td><td style="color:var(--plata2);font-size:0.82rem;">Institución jurídica</td><td style="color:var(--plata2);white-space:nowrap;">2023</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Constancia"><td class="td-num">19</td><td><span class="tipo-badge t-constancia">Constancia</span></td><td class="td-programa">Reconocimiento: Contrato Individual de Trabajo 2023</td><td style="color:var(--plata2);font-size:0.82rem;">Institución laboral</td><td style="color:var(--plata2);white-space:nowrap;">2023</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Certificado"><td class="td-num">20</td><td><span class="tipo-badge t-cert">Certificado</span></td><td class="td-programa">Interpretación Constitucional (LD7)</td><td style="color:var(--plata2);font-size:0.82rem;">Centro de Capacitación Jurídica</td><td style="color:var(--plata2);white-space:nowrap;">2023</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Constancia"><td class="td-num">21</td><td><span class="tipo-badge t-constancia">Constancia</span></td><td class="td-programa">Actualización Contable (C.P.)</td><td style="color:var(--plata2);font-size:0.82rem;">Institución contable</td><td style="color:var(--plata2);white-space:nowrap;">May 2023</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Microcredencial"><td class="td-num">22</td><td><span class="tipo-badge t-micro">Microcredencial</span></td><td class="td-programa">Análisis del Impacto de la NOM-035</td><td style="color:var(--plata2);font-size:0.82rem;">TecMilenio / En línea</td><td style="color:var(--plata2);white-space:nowrap;">May 2022</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Microcredencial"><td class="td-num">23</td><td><span class="tipo-badge t-micro">Microcredencial</span></td><td class="td-programa">Derecho Procesal Civil</td><td style="color:var(--plata2);font-size:0.82rem;">TecMilenio / En línea</td><td style="color:var(--plata2);white-space:nowrap;">May 2022</td><td style="color:var(--plata3);">—</td></tr>
+            <tr data-tipo="Microcredencial"><td class="td-num">24</td><td><span class="tipo-badge t-micro">Microcredencial</span></td><td class="td-programa">Gestión de la Organización de Eventos</td><td style="color:var(--plata2);font-size:0.82rem;">TecMilenio / En línea</td><td style="color:var(--plata2);white-space:nowrap;">Feb 2023</td><td style="color:var(--plata3);">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── HABILIDADES ─── -->
+  <div class="section" id="habilidades">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <span class="section-icon">💡</span>
+      <h2 class="section-title">Habilidades y Competencias Adquiridas</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-categories">
+      <div class="skill-category">
+        <div class="skill-cat-header"><span class="skill-cat-icon">⚔️</span> Litigación Oral</div>
+        <div class="skills-list">
+          <div class="skill-item"><span class="skill-dot"></span>Litigación Oral Penal (CNPP)</div>
+          <div class="skill-item"><span class="skill-dot"></span>Litigación Civil y Mercantil Oral</div>
+          <div class="skill-item"><span class="skill-dot"></span>Interrogatorio y Contrainterrogatorio</div>
+          <div class="skill-item"><span class="skill-dot"></span>Audiencia Inicial — Control de Detención</div>
+          <div class="skill-item"><span class="skill-dot"></span>Medidas Cautelares y Prisión Preventiva</div>
+          <div class="skill-item"><span class="skill-dot"></span>Oratoria Forense y Técnicas de Debate</div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-header"><span class="skill-cat-icon">🏛️</span> Amparo y Constitucional</div>
+        <div class="skills-list">
+          <div class="skill-item"><span class="skill-dot"></span>Juicio de Amparo Directo e Indirecto</div>
+          <div class="skill-item"><span class="skill-dot"></span>Amparo en Materia Laboral y Penal</div>
+          <div class="skill-item"><span class="skill-dot"></span>Conceptos de Violación y Agravios</div>
+          <div class="skill-item"><span class="skill-dot"></span>Interpretación Constitucional (LD7)</div>
+          <div class="skill-item"><span class="skill-dot"></span>Control Difuso / Inaplicación de Normas</div>
+          <div class="skill-item"><span class="skill-dot"></span>Sistema de Precedentes del PJF</div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-header"><span class="skill-cat-icon">💼</span> Fiscal y Corporativo</div>
+        <div class="skills-list">
+          <div class="skill-item"><span class="skill-dot"></span>Derecho Fiscal y Tributario</div>
+          <div class="skill-item"><span class="skill-dot"></span>Planeación Fiscal (ISR, IVA, SAT)</div>
+          <div class="skill-item"><span class="skill-dot"></span>Derecho Corporativo y Personas Morales</div>
+          <div class="skill-item"><span class="skill-dot"></span>Contratos Civiles y Mercantiles</div>
+          <div class="skill-item"><span class="skill-dot"></span>Reforma Fiscal 2024</div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-header"><span class="skill-cat-icon">👷</span> Laboral y DDHH</div>
+        <div class="skills-list">
+          <div class="skill-item"><span class="skill-dot"></span>Derecho Laboral Procesal (LFT)</div>
+          <div class="skill-item"><span class="skill-dot"></span>Derecho Internacional del Trabajo (OIT)</div>
+          <div class="skill-item"><span class="skill-dot"></span>Reforma Laboral y Nuevo Sistema Adversarial</div>
+          <div class="skill-item"><span class="skill-dot"></span>Derechos Humanos y Litigio Estratégico</div>
+          <div class="skill-item"><span class="skill-dot"></span>NOM-035 y Bienestar Laboral</div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-header"><span class="skill-cat-icon">&#9878;&#65039;</span> Civil y Mercantil</div>
+        <div class="skills-list">
+          <div class="skill-item"><span class="skill-dot"></span>Código Nac. de Proced. Civiles y Familiares</div>
+          <div class="skill-item"><span class="skill-dot"></span>Valoración de Prueba Pericial</div>
+          <div class="skill-item"><span class="skill-dot"></span>Providencias Precautorias / Cobro de Deudas</div>
+          <div class="skill-item"><span class="skill-dot"></span>Ejecución de Sentencias</div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-header"><span class="skill-cat-icon">📊</span> Contaduría y Penal</div>
+        <div class="skills-list">
+          <div class="skill-item"><span class="skill-dot"></span>Contabilidad, Auditoría y Análisis Financiero</div>
+          <div class="skill-item"><span class="skill-dot"></span>NIF y Normas Fiscales</div>
+          <div class="skill-item"><span class="skill-dot"></span>Teoría del Delito e Iter Criminis</div>
+          <div class="skill-item"><span class="skill-dot"></span>Argumentación y Redacción Jurídica</div>
+          <div class="skill-item"><span class="skill-dot"></span>E-Justicia / Plataformas Digitales del PJF</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── ÁREAS ─── -->
+  <div class="section" id="areas">
+    <div class="section-header">
+      <span class="section-number">06</span>
+      <span class="section-icon">🏛️</span>
+      <h2 class="section-title">Áreas de Práctica Profesional</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="areas-grid">
+      <div class="area-card">
+        <span class="area-icon">&#9878;&#65039;</span>
+        <h3>Derecho Penal<br>&amp; Litigación Oral</h3>
+        <p>Juicio oral acusatorio, CNPP, audiencias, INACIPE, SCJN</p>
+        <div class="area-bar"></div>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">&#128203;</span>
+        <h3>Derecho Fiscal<br>&amp; Corporativo</h3>
+        <p>SAT, ISR, IVA, planeación tributaria, controversias fiscales</p>
+        <div class="area-bar"></div>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">&#127963;&#65039;</span>
+        <h3>Amparo y Derecho<br>Constitucional</h3>
+        <p>Amparo directo e indirecto, interpretación constitucional, precedentes SCJN</p>
+        <div class="area-bar"></div>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">&#128084;</span>
+        <h3>Derecho Laboral<br>&amp; Derechos Humanos</h3>
+        <p>LFT, reforma laboral, OIT, CADH, defensa estratégica</p>
+        <div class="area-bar"></div>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">&#129309;</span>
+        <h3>Litigio Civil<br>&amp; Mercantil</h3>
+        <p>Juicio oral civil, contratos, acciones mercantiles, ejecución de sentencias</p>
+        <div class="area-bar"></div>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">&#128200;</span>
+        <h3>Contaduría<br>&amp; Finanzas</h3>
+        <p>Contabilidad, auditoría, NIF, análisis financiero, LCP</p>
+        <div class="area-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── CONTACTO ─── -->
+  <div class="section" id="contacto">
+    <div class="contact-section">
+      <h2>Contacto Profesional</h2>
+      <div class="contact-items">
+        <a class="contact-item" href="mailto:josemario.btavera@gmail.com" style="text-decoration:none;">
+          <span class="contact-icon">&#128140;</span>
+          <span>josemario.btavera@gmail.com</span>
+        </a>
+        <a class="contact-item" href="https://wa.me/523330238213" target="_blank" style="text-decoration:none;">
+          <span class="contact-icon">&#128242;</span>
+          <span>WhatsApp: 333 023 8213</span>
+        </a>
+        <div class="contact-item">
+          <span class="contact-icon">&#128205;</span>
+          <span>Zacatecas, Zacatecas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">José Mario Barrera Tavera</div>
+  <div class="footer-ornament">
+    <div class="fo-line"></div>
+    <div class="fo-dot"></div>
+    <div class="fo-line"></div>
+  </div>
+  <p>Perfil Académico &amp; Profesional &nbsp;·&nbsp; <span style="color:var(--azul-bright);">46+ Programas</span> &nbsp;·&nbsp; <span style="color:var(--azul-bright);">252+ Horas documentadas</span> &nbsp;·&nbsp; Actualizado: Abril 2026</p>
+  <p style="margin-top:0.5rem;color:var(--plata4);">josemario.btavera@gmail.com &nbsp;|&nbsp; Zacatecas, Zacatecas &nbsp;|&nbsp; WhatsApp: 333 023 8213</p>
+</footer>
+
+<!-- Back to top -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba">&#8679;</button>
+
+<script>
+// ── LOADER ──
+window.addEventListener('DOMContentLoaded', () => {
+  const prog = document.getElementById('loaderProg');
+  const loader = document.getElementById('loader');
+  let w = 0;
+  const iv = setInterval(() => {
+    w += Math.random() * 25;
+    if (w >= 100) { w = 100; clearInterval(iv); }
+    prog.style.width = w + '%';
+  }, 100);
+  setTimeout(() => {
+    loader.classList.add('fade');
+    setTimeout(() => loader.remove(), 600);
+    initParticles();
+    initScrollAnimations();
+    animateStats();
+  }, 900);
+});
+
+// ── PARTICLES ──
+function initParticles() {
+  const container = document.getElementById('particles');
+  const colors = ['rgba(34,102,204,0.6)', 'rgba(91,163,255,0.4)', 'rgba(200,220,255,0.3)', 'rgba(26,74,138,0.5)'];
+  for (let i = 0; i < 40; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 3 + 1;
+    p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random()*100}%;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      animation-duration:${Math.random()*20+15}s;
+      animation-delay:-${Math.random()*20}s;
+    `;
+    container.appendChild(p);
+  }
+}
+
+// ── SCROLL ANIMATIONS ──
+function initScrollAnimations() {
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.07 });
+  sections.forEach(s => observer.observe(s));
+}
+
+// ── COUNTER ANIMATION ──
+function animateStats() {
+  document.querySelectorAll('.stat-n[data-target]').forEach(el => {
+    const target = +el.dataset.target;
+    const suffix = el.dataset.suffix || '';
+    let current = 0;
+    const step = target / 40;
+    const iv = setInterval(() => {
+      current += step;
+      if (current >= target) { current = target; clearInterval(iv); }
+      el.textContent = Math.floor(current) + suffix;
+    }, 40);
+  });
+}
+
+// ── NAVIGATION ──
+function navTo(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const navH = document.querySelector('.nav-wrapper').offsetHeight;
+  const top = el.getBoundingClientRect().top + window.scrollY - navH - 8;
+  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+}
+
+// ── BACK TO TOP ──
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('backTop');
+  if (window.scrollY > 500) btn.classList.add('show');
+  else btn.classList.remove('show');
+
+  // Nav active state
+  const sections = ['inicio','grado','diplomados','judicial','otros','habilidades','areas','contacto'];
+  const navH = document.querySelector('.nav-wrapper').offsetHeight + 10;
+  let current = 'inicio';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - navH - 30) current = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    const isActive = a.id === 'nav-' + current;
+    a.classList.toggle('active', isActive);
+  });
+});
+
+// ── FILTER TABLE ──
+function filterOtros(tipo, btn) {
+  document.querySelectorAll('#tabla-otros tbody tr').forEach(row => {
+    row.style.display = (tipo === 'all' || row.dataset.tipo === tipo) ? '' : 'none';
+  });
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ── PHOTO UPLOAD ──
+function loadPhoto(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = document.getElementById('profileImg');
+    const placeholder = document.getElementById('photoPlaceholder');
+    img.src = e.target.result;
+    img.style.display = 'block';
+    placeholder.style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+}
+</script>
+</body>
+</html>
