@@ -9,56 +9,56 @@
 /* ═══ LIGHT MODE — Rose Gold & Champagne ═══ */
 :root {
   /* Fondos */
-  --negro:      #0d0a0b;
-  --negro2:     #161013;
-  --negro3:     #1e1518;
-  --azul-deep:  #1a1015;
+  --negro:      #fdf5f0;
+  --negro2:     #ffffff;
+  --negro3:     #fef8f5;
+  --azul-deep:  #fce8e0;
 
-  /* Rose Gold palette */
-  --azul:        #8b4a5a;
-  --azul2:       #c07a8a;
-  --azul3:       #d4929f;
-  --azul-bright: #e8b4be;
-  --azul-neon:   #f0c8d0;
+  /* Acentos Rose Gold */
+  --azul:        #7a2a3a;
+  --azul2:       #9e3a50;
+  --azul3:       #b85a6a;
+  --azul-bright: #9e3a50;
+  --azul-neon:   #c07a8a;
 
-  /* Textos */
-  --plata:       #f5e8e0;
-  --plata2:      #e8d0c4;
-  --plata3:      #c4a090;
-  --plata4:      #8a6858;
-  --plata-bright:#fff8f5;
-  --blanco:      #ffffff;
+  /* Textos — OSCUROS para fondo claro */
+  --plata:       #2a1018;       /* texto principal */
+  --plata2:      #4a2030;       /* texto secundario */
+  --plata3:      #7a4050;       /* texto terciario */
+  --plata4:      #a07080;       /* texto sutil */
+  --plata-bright:#1a0810;       /* texto énfasis */
+  --blanco:      #1a0810;       /* títulos grandes */
 
-  /* Dorados / acentos */
-  --dorado:      #b8860b;
-  --dorado2:     #d4a030;
+  /* Dorados */
+  --dorado:      #9a6800;
+  --dorado2:     #7a5000;
 
-  --verde:       #6aab80;
-  --rojo:        #cc4444;
-  --gris:        #2a1a1e;
+  --verde:       #1a6a40;
+  --rojo:        #aa2222;
+  --gris:        #f5e8e0;
 
   /* Semánticas LIGHT */
-  --bg-grid:        rgba(192,122,138,0.06);
+  --bg-grid:        rgba(139,74,90,0.05);
   --card-bg:        #ffffff;
-  --card-border:    #e8d0c4;
-  --card-shadow:    rgba(139,74,90,0.12);
+  --card-border:    #f0d8d0;
+  --card-shadow:    rgba(139,74,90,0.10);
   --table-head:     #3a1822;
   --table-even:     #fdf5f2;
   --table-hover:    #f5e0d8;
-  --nav-bg:         rgba(255,255,255,0.96);
-  --nav-border:     #e0c0b0;
-  --hero-grad:      rgba(139,74,90,0.10);
+  --nav-bg:         rgba(255,255,255,0.97);
+  --nav-border:     #f0d0c0;
+  --hero-grad:      rgba(139,74,90,0.08);
   --filter-bg:      #fdf5f2;
   --footer-bg:      #1a0e12;
   --footer-text:    #a08070;
   --contact-bg:     linear-gradient(135deg,#fff5f0 0%,#fde8e0 100%);
   --contact-border: rgba(192,122,138,0.30);
-  --skill-bg:       #fff5f0;
-  --skill-border:   #e8c0b0;
+  --skill-bg:       #fff8f5;
+  --skill-border:   #f0d8d0;
   --section-line:   #c07a8a;
-  --loader-bg:      #0d0a0b;
+  --loader-bg:      #fdf5f0;
   --scrollbar-track:#f5e8e0;
-  --photo-border:   #f5e8e0;
+  --photo-border:   #fdf5f0;
 }
 
 /* ═══ DARK MODE — Deep Black + Rose Gold ═══ */
@@ -628,6 +628,21 @@ main {
   background: rgba(200,168,75,0.15); border: 1px solid rgba(200,168,75,0.4);
   color: var(--dorado2); font-size: 0.7rem; font-weight: 700;
   padding: 2px 8px; border-radius: 10px; margin-left: 0.5rem;
+}
+.status-curso {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: rgba(91,163,255,0.15); border: 1px solid rgba(91,163,255,0.4);
+  color: #5ba3ff; font-size: 0.7rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 10px; margin-left: 0.5rem;
+  animation: pulseCurso 2s ease-in-out infinite;
+}
+@keyframes pulseCurso {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+:root .status-curso {
+  background: rgba(26,106,160,0.12); border-color: rgba(26,106,160,0.4);
+  color: #1a5a90;
 }
 
 /* ══════════════ DIPLOMADOS ══════════════ */
@@ -1209,6 +1224,204 @@ html.dark #darkToggle .icon-moon { opacity: 1; }
   .contact-section { padding: 2rem 1rem; }
   .filter-bar { padding: 0.8rem; }
 }
+
+/* ══════════════ LIGHT MODE OVERRIDES ══════════════ */
+
+/* Nav */
+:root nav a { color: var(--plata3); }
+:root nav a:hover { color: var(--azul2); }
+:root nav a.active { color: var(--azul2); }
+:root .nav-logo { color: #9a6800; }
+
+/* Hero */
+:root .hero-title { color: var(--azul2); }
+:root .hero-sub { color: var(--plata3); }
+:root .stat-n { color: var(--azul2); }
+:root .stat-l { color: var(--plata3); }
+:root .scroll-cta { color: var(--plata3); }
+:root .section-number { color: #9a6800; }
+:root .section-title { color: var(--blanco); }
+
+/* Cards */
+:root .grado-card h3 { color: var(--blanco); }
+:root .grado-card .inst { color: var(--plata3); }
+:root .grado-card .year-badge { color: #9a6800; }
+:root .grado-card-badge { color: var(--azul2); }
+:root .status-pasante { color: #9a6800; }
+:root .status-curso { color: #1a5a90; background: rgba(26,90,144,0.1); border-color: rgba(26,90,144,0.35); }
+
+/* &#128196; Diplomados */
+:root .diplo-card h3 { color: var(--blanco); }
+:root .diplo-card .inst { color: var(--plata3); }
+:root .diplo-tag { color: #9a6800; }
+
+/* Tablas */
+:root thead th { color: #f5e8e0; }
+:root tbody td { color: var(--plata2); }
+:root .td-programa { color: var(--blanco); }
+:root .td-habilidades { color: var(--plata3); }
+:root .td-num { color: var(--plata4); }
+:root .horas-badge { color: var(--azul2); }
+
+/* Badges de tipo */
+:root .t-curso  { color: #9e3a50; background: rgba(158,58,80,0.08); border-color: rgba(158,58,80,0.3); }
+:root .t-taller { color: #9a6800; background: rgba(154,104,0,0.08); border-color: rgba(154,104,0,0.3); }
+:root .t-jornada { color: #7a2a6a; background: rgba(122,42,106,0.08); border-color: rgba(122,42,106,0.25); }
+:root .t-seminario { color: #7a4050; background: rgba(122,64,80,0.06); border-color: rgba(122,64,80,0.25); }
+:root .t-cert { color: #1a6a40; background: rgba(26,106,64,0.08); border-color: rgba(26,106,64,0.3); }
+:root .t-micro { color: #9a6800; background: rgba(154,104,0,0.07); border-color: rgba(154,104,0,0.28); }
+:root .t-reconoc { color: #7a4050; background: rgba(122,64,80,0.06); border-color: rgba(122,64,80,0.2); }
+:root .t-constancia { color: #9e3a50; background: rgba(158,58,80,0.06); border-color: rgba(158,58,80,0.22); }
+
+/* Filtros */
+:root .filter-btn { color: var(--plata3); border-color: #f0d0c0; }
+:root .filter-btn:hover { color: var(--azul2); border-color: var(--azul2); background: rgba(158,58,80,0.06); }
+
+/* &#128161; Habilidades */
+:root .skill-cat-header { color: var(--azul2); }
+:root .skill-item { color: var(--plata2); }
+:root .skill-item:hover { color: var(--blanco); }
+
+/* Áreas */
+:root .area-card h3 { color: var(--blanco); }
+:root .area-card p { color: var(--plata3); }
+:root .area-card:hover h3 { color: #1a0810; }
+:root .area-card:hover p { color: #4a2030; }
+
+/* Contacto */
+:root .contact-section h2 { color: var(--blanco); }
+:root .contact-item, :root a.contact-item { color: var(--plata2); }
+:root .contact-item:hover, :root a.contact-item:hover { color: var(--blanco); }
+
+/* Timeline */
+:root .timeline-year { color: #9a6800; }
+:root .timeline-content h4 { color: var(--blanco); }
+:root .timeline-content p { color: var(--plata3); }
+
+/* Footer */
+:root footer { color: #e0c8c0; }
+
+/* Loader */
+:root .loader-name { color: var(--azul2); }
+
+/* Hero botones texto */
+:root .hero-btn-azul  { color: var(--azul2); border-color: var(--azul2); }
+:root .hero-btn-gold  { color: #9a6800; border-color: #9a6800; }
+:root .hero-btn-green { color: #1a6a40; border-color: #4aaa70; }
+:root .hero-btn-silver{ color: var(--plata3); border-color: #d0b0a0; }
+:root .hero-btn-azul:hover, :root .hero-btn-gold:hover,
+:root .hero-btn-green:hover, :root .hero-btn-silver:hover { color: #ffffff; }
+
+/* Area card bg en light mode */
+:root .area-card {
+  background: linear-gradient(135deg, #fff0ee 0%, #fde8e4 100%);
+  border-color: #f0d0c8;
+}
+:root .area-card:hover {
+  background: linear-gradient(135deg, #9e3a50 0%, #c07a8a 100%);
+  border-color: #c07a8a;
+}
+
+/* Skill category header bg en light */
+:root .skill-cat-header {
+  background: linear-gradient(90deg, rgba(158,58,80,0.08), transparent);
+  border-bottom-color: #f0d0c0;
+}
+
+/* Grado card bg en light */
+:root .grado-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fff5f2 100%);
+}
+
+/* Diplo card en light */
+:root .diplo-card {
+  background: #ffffff;
+  border-color: #f0d0c0;
+}
+:root .diplo-icon { filter: none; }
+
+/* Table section wrap en light */
+:root .table-section-wrap {
+  background: #ffffff;
+  border-color: #f0d0c0;
+}
+:root tbody tr:hover { background: #fdf0ec; }
+
+/* Skill cat bg light */
+:root .skill-category {
+  background: #ffffff;
+  border-color: #f0d0c0;
+}
+
+/* Contact items en light */
+:root .contact-section {
+  border-color: rgba(158,58,80,0.25);
+}
+
+
+/* ══════════════ DARK MODE FORCE OVERRIDES ══════════════ */
+html.dark .skill-category {
+  background: #161013 !important;
+  border-color: #3a2028 !important;
+}
+html.dark .skill-cat-header {
+  background: linear-gradient(90deg, rgba(139,74,90,0.3), transparent) !important;
+  border-bottom-color: #3a2028 !important;
+  color: #e8b4be !important;
+}
+html.dark .skill-item { color: #e8d0c4 !important; }
+html.dark .skill-item:hover { color: #ffffff !important; }
+html.dark .grado-card {
+  background: linear-gradient(135deg, #161013 0%, #1a1015 100%) !important;
+  border-color: #3a2028 !important;
+}
+html.dark .diplo-card {
+  background: #161013 !important;
+  border-color: #3a2028 !important;
+}
+html.dark .table-section-wrap {
+  background: #161013 !important;
+  border-color: #3a2028 !important;
+}
+html.dark .area-card {
+  background: #161013 !important;
+  border-color: #3a2028 !important;
+}
+html.dark .contact-section {
+  background: linear-gradient(135deg, #161013, #1a1015) !important;
+  border-color: rgba(192,122,138,0.35) !important;
+}
+html.dark .contact-item, html.dark a.contact-item {
+  background: rgba(192,122,138,0.08) !important;
+  border-color: rgba(192,122,138,0.30) !important;
+  color: #f5e8e0 !important;
+}
+html.dark .filter-btn { color: #c4a090 !important; border-color: #3a2028 !important; }
+html.dark .filter-btn:hover { color: #e8b4be !important; }
+html.dark tbody td { color: #e8d0c4 !important; }
+html.dark .td-programa { color: #fff8f5 !important; }
+html.dark .td-habilidades { color: #c4a090 !important; }
+html.dark thead th { color: #f5e8e0 !important; }
+html.dark .grado-card h3 { color: #ffffff !important; }
+html.dark .grado-card .inst { color: #c4a090 !important; }
+html.dark .grado-card .year-badge { color: #d4a030 !important; }
+html.dark .diplo-card h3 { color: #ffffff !important; }
+html.dark .diplo-card .inst { color: #c4a090 !important; }
+html.dark .area-card h3 { color: #ffffff !important; }
+html.dark .area-card p { color: #c4a090 !important; }
+html.dark .section-title { color: #ffffff !important; }
+html.dark .hero-name { color: #ffffff !important; }
+html.dark nav a { color: #c4a090 !important; }
+html.dark nav a:hover { color: #f5e8e0 !important; }
+html.dark nav a.active { color: #e8b4be !important; }
+html.dark .stat-n { color: #e8b4be !important; }
+html.dark .stat-l { color: #c4a090 !important; }
+html.dark .section-number { color: #d4a030 !important; }
+html.dark .contact-section h2 { color: #ffffff !important; }
+html.dark body { background: #0d0a0b !important; color: #f5e8e0 !important; }
+html.dark #particles { display: block !important; }
+html.dark body::before { display: block !important; }
+
 </style>
 </head>
 <body>
@@ -1252,6 +1465,7 @@ html.dark #darkToggle .icon-moon { opacity: 1; }
   </h1>
 
   <p class="hero-title">Lic. en Derecho &nbsp;·&nbsp; Lic. en Contaduría Pública &nbsp;·&nbsp; Pasante de Maestría en Juicios Orales</p>
+  <p class="hero-title" style="font-size:0.85rem;opacity:0.85;">Mtría. Derecho Penal (en curso) &nbsp;·&nbsp; Especialidad Justicia Administrativa (en curso)</p>
   <p class="hero-sub">Derecho Fiscal · Litigación Oral · Amparo · Derechos Humanos · Contaduría</p>
 
   <div style="display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem;font-size:0.82rem;color:var(--plata3);">
@@ -1271,8 +1485,8 @@ html.dark #darkToggle .icon-moon { opacity: 1; }
   <!-- Stats -->
   <div class="hero-stats">
     <div class="stat-item">
-      <div class="stat-n" data-target="3">0</div>
-      <div class="stat-l">Títulos de Grado</div>
+      <div class="stat-n" data-target="5">0</div>
+      <div class="stat-l">Grados & Posgrados</div>
     </div>
     <div class="stat-item">
       <div class="stat-n" data-target="5">0</div>
@@ -1288,17 +1502,17 @@ html.dark #darkToggle .icon-moon { opacity: 1; }
     </div>
     <div class="stat-item">
       <div class="stat-n" style="font-size:1.5rem;">2022–26</div>
-      <div class="stat-l">Período Formación</div>
+      <div class="stat-l">Período &#127891; Formación</div>
     </div>
   </div>
 
   <!-- Botones nav rápido -->
   <div style="display:flex;gap:0.8rem;flex-wrap:wrap;justify-content:center;">
-    <button onclick="navTo('grado')" class="hero-btn-azul">&#127891; Formación</button>
-    <button onclick="navTo('diplomados')" class="hero-btn-gold">&#128220; Diplomados</button>
-    <button onclick="navTo('judicial')" class="hero-btn-azul">&#9878;&#65039; Esc. Judicial</button>
-    <button onclick="navTo('habilidades')" class="hero-btn-green">&#128161; Habilidades</button>
-    <button onclick="navTo('areas')" class="hero-btn-silver">&#9962; Areas</button>
+    <button onclick="navTo('grado')" class="hero-btn-azul">Formación</button>
+    <button onclick="navTo('diplomados')" class="hero-btn-gold">Diplomados</button>
+    <button onclick="navTo('judicial')" class="hero-btn-azul">&#9878; Esc. Judicial</button>
+    <button onclick="navTo('habilidades')" class="hero-btn-green">Habilidades</button>
+    <button onclick="navTo('areas')" class="hero-btn-silver">&#128204; Areas</button>
   </div>
 
   <div class="scroll-cta">
@@ -1311,14 +1525,14 @@ html.dark #darkToggle .icon-moon { opacity: 1; }
 <div class="nav-wrapper" id="navWrapper">
   <nav>
     <div class="nav-logo">JMB · T</div>
-    <a href="javascript:void(0)" onclick="navTo('inicio')" id="nav-inicio">&#127968; Inicio</a>
+    <a href="javascript:void(0)" onclick="navTo('inicio')" id="nav-inicio">&#8962; Inicio</a>
     <a href="javascript:void(0)" onclick="navTo('grado')" id="nav-grado">&#127891; Grado</a>
-    <a href="javascript:void(0)" onclick="navTo('diplomados')" id="nav-diplomados">&#128220; Diplomados</a>
-    <a href="javascript:void(0)" onclick="navTo('judicial')" id="nav-judicial">&#9878;&#65039; Esc. Judicial</a>
+    <a href="javascript:void(0)" onclick="navTo('diplomados')" id="nav-diplomados">Diplomados</a>
+    <a href="javascript:void(0)" onclick="navTo('judicial')" id="nav-judicial">Esc. Judicial</a>
     <a href="javascript:void(0)" onclick="navTo('otros')" id="nav-otros">&#128218; Otros Cursos</a>
-    <a href="javascript:void(0)" onclick="navTo('habilidades')" id="nav-habilidades">&#128161; Habilidades</a>
-    <a href="javascript:void(0)" onclick="navTo('areas')" id="nav-areas">&#9962; Areas</a>
-    <a href="javascript:void(0)" onclick="navTo('contacto')" id="nav-contacto">&#128140; Contacto</a>
+    <a href="javascript:void(0)" onclick="navTo('habilidades')" id="nav-habilidades">Habilidades</a>
+    <a href="javascript:void(0)" onclick="navTo('areas')" id="nav-areas">Areas</a>
+    <a href="javascript:void(0)" onclick="navTo('contacto')" id="nav-contacto">&#64; Contacto</a>
   </nav>
 </div>
 
@@ -1357,6 +1571,22 @@ html.dark #darkToggle .icon-moon { opacity: 1; }
         <p class="inst">Institución con RVOE oficial — SEP</p>
         <p class="year-badge">📅 Titulado 2025</p>
         <div class="bg-icon">📊</div>
+      </div>
+      <div class="grado-card">
+        <div class="grado-card-badge">⚖️ Maestría</div>
+        <span class="status-curso">▶ En Curso</span>
+        <h3>Maestría en Derecho Penal</h3>
+        <p class="inst">Centro Carbonell — SEP · RVOE 20190494</p>
+        <p class="year-badge">📅 En progreso &nbsp;·&nbsp; Ciudad de México</p>
+        <div class="bg-icon">⚖️</div>
+      </div>
+      <div class="grado-card">
+        <div class="grado-card-badge">🏛️ Especialidad</div>
+        <span class="status-curso">▶ En Curso</span>
+        <h3>Especialidad en Justicia Administrativa</h3>
+        <p class="inst">Centro de Estudios Superiores en Derecho Fiscal y Administrativo — TFJA</p>
+        <p class="year-badge">📅 En progreso &nbsp;·&nbsp; Tribunal Federal de Justicia Administrativa</p>
+        <div class="bg-icon">🏛️</div>
       </div>
     </div>
   </div>
@@ -1568,7 +1798,7 @@ html.dark #darkToggle .icon-moon { opacity: 1; }
         </div>
       </div>
       <div class="skill-category">
-        <div class="skill-cat-header"><span class="skill-cat-icon">&#9878;&#65039;</span> Civil y Mercantil</div>
+        <div class="skill-cat-header"><span class="skill-cat-icon"></span> Civil y Mercantil</div>
         <div class="skills-list">
           <div class="skill-item"><span class="skill-dot"></span>Código Nac. de Proced. Civiles y Familiares</div>
           <div class="skill-item"><span class="skill-dot"></span>Valoración de Prueba Pericial</div>
@@ -1599,7 +1829,7 @@ html.dark #darkToggle .icon-moon { opacity: 1; }
     </div>
     <div class="areas-grid">
       <div class="area-card">
-        <span class="area-icon">&#9878;&#65039;</span>
+        <span class="area-icon">&#9878;</span>
         <h3>Derecho Penal<br>&amp; Litigación Oral</h3>
         <p>Juicio oral acusatorio, CNPP, audiencias, INACIPE, SCJN</p>
         <div class="area-bar"></div>
@@ -1611,7 +1841,7 @@ html.dark #darkToggle .icon-moon { opacity: 1; }
         <div class="area-bar"></div>
       </div>
       <div class="area-card">
-        <span class="area-icon">&#127963;&#65039;</span>
+        <span class="area-icon">&#9962;</span>
         <h3>Amparo y Derecho<br>Constitucional</h3>
         <p>Amparo directo e indirecto, interpretación constitucional, precedentes SCJN</p>
         <div class="area-bar"></div>
